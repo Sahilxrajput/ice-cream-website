@@ -4,10 +4,12 @@ import heart from "../assets/iceCreame/heart.svg";
 import cart from "../assets/iceCreame/cart.svg";
 import { ShoppingCart } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({width}) => {
   return (
-    <nav className="h-20 w-[70%] z-50 bg-white border-2 fixed top-6  left-1/2 -translate-x-1/2 border-black rounded-full font-cursive text-lg items-center justify-around flex">
-      <ul class="list-none flex items-center justify-between w-[30%]">
+    <nav
+    style={{width}}
+    className={`h-20 z-50 bg-white border-2 fixed top-6 left-1/2 -translate-x-1/2 border-black rounded-full text-lg items-center justify-around flex`}>
+      <ul class="list-none font-thin font-cursive flex items-center justify-between w-[30%]">
         <li>Home</li>
         <li>About Us</li>
         <li>Contact</li>
@@ -19,7 +21,7 @@ const Navbar = () => {
           className="h-[80%] self-center rounded-full aspect-square"
         />
       </div>
-      <ul class="list-none flex items-center justify-between w-[35%] ">
+      <ul class="list-none font-cursive flex items-center justify-between w-[35%] ">
         <li>Flavors</li>
         <li>Contact Us</li>
         <li>

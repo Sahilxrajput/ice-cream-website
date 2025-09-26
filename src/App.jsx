@@ -19,10 +19,17 @@ import Hero from "./components/Hero";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+
+
 const App = () => {
+
+     const { scrollYProgress } = useScroll();
+    const width = useTransform(scrollYProgress, [0, 1], ["100%", "40%"]);
+
   return (
-    <div>
-      <Navbar />
+    <div className="overflow-x-hidden">
+      <Navbar width={width} />
       <Hero />
       <img src={rainbow} className="absolute top-10/12 right-2 z-10" />
       {/* second page */}
@@ -48,10 +55,10 @@ const App = () => {
           </p>
 
           <div className="flex items-center justify-center gap-6">
-            <button className="px-4 bg-mango rounded-full py-1 border-2">
+            <button className="px-4 font-cursive bg-mango rounded-full py-1 border-2">
               Learn more
             </button>
-            <button className="px-4 bg-white rounded-full py-1 border-mango border-2">
+            <button className="px-4 font-cursive bg-white rounded-full py-1 border-mango border-2">
               Try now
             </button>
           </div>
@@ -66,7 +73,7 @@ const App = () => {
           </p>
 
           <div className="flex items-center justify-center gap-6">
-            <button className="px-4 border-mango bg-white rounded-full py-1 border-2">
+            <button className="px-4 font-cursive border-mango bg-white rounded-full py-1 border-2">
               Learn more
             </button>
           </div>
@@ -80,31 +87,31 @@ const App = () => {
           Product Range
         </h2>
         <div className="flex-1 flex gap-5 p-18">
-          <Card title={"Cones"} img={trio2} icon={coneicon}/>
+          <Card title={"Cones"} img={trio2} icon={coneicon} />
           <Card title={"Juices"} img={juice} icon={juiceicon} />
-          <Card title={"IceCreams"} img={trio3} icon={icecreameicon}/>
+          <Card title={"IceCreams"} img={trio3} icon={icecreameicon} />
         </div>
       </div>
 
       {/* Flavoue Page  */}
       <div className="w-screen h-screen bg-primary relative">
         {/* Buttons */}
-        <button className="px-4 absolute top-14 left-20 text-xl -rotate-10 bg-vanila rounded-full border-2 font-cursive">
+        <button className="cursor-pointer z-20 px-4 absolute top-14 left-20 text-xl -rotate-10 bg-vanila rounded-full border-2 font-cursive">
           Vanila
         </button>
-        <button className="px-4 absolute top-4 left-80 text-xl -rotate-8 bg-blueberry rounded-full border-2 font-cursive">
+        <button className="cursor-pointer z-20 px-4 absolute top-4 left-80 text-xl -rotate-8 bg-blueberry rounded-full border-2 font-cursive">
           Blueberry
         </button>
-        <button className="px-4 absolute -top-2 left-135 text-xl -rotate-2 bg-chocolate rounded-full border-2 font-cursive">
+        <button className="cursor-pointer px-4 absolute -top-2 left-135 text-xl -rotate-2 bg-chocolate rounded-full border-2 font-cursive">
           Chocolate
         </button>
-        <button className="px-4 absolute -top-2 left-1/2 text-xl rotate-2 bg-strawberry rounded-full border-2 font-cursive">
+        <button className="cursor-pointer px-4 absolute -top-2 left-1/2 text-xl rotate-2 bg-strawberry rounded-full border-2 font-cursive">
           Strawberry
         </button>
-        <button className="px-4 absolute top-0 left-65/100 text-xl rotate-8 bg-pistachio rounded-full border-2 font-cursive">
+        <button className="cursor-pointer px-4 absolute top-0 left-65/100 text-xl rotate-8 bg-pistachio rounded-full border-2 font-cursive">
           Pistachio
         </button>
-        <button className="px-4 absolute top-6 right-60 text-xl rotate-8 bg-mango rounded-full border-2 font-cursive">
+        <button className="cursor-pointer px-4 absolute top-6 right-60 text-xl rotate-8 bg-mango rounded-full border-2 font-cursive">
           Mango
         </button>
 
@@ -116,9 +123,9 @@ const App = () => {
         <img src={hollow} className="absolute h-6/10 top-6 left-20" />
 
         {/* Right Side  */}
-        <div className="flex flex-col items-center justify-center absolute mr-8 w-1/2 right-0 top-2/10 px-20 gap-10">
-          <img src={rainbow} className="absolute -top-4 -rotate-45 left-20" />
-          <h2 className=" font-black text-5xl z-20 text-black tracking-wider text-shadow leading-tight">
+        <div className="flex flex-col items-center justify-center absolute mr-8 w-1/2 right-0 top-2/10 px-20 gap-8">
+          <img src={rainbow} className="absolute -top-8 -rotate-45 left-20" />
+          <h2 className=" font-melted font-bold text-5xl z-20 text-[#71341c] tracking-widest text-shadow">
             Heavenly <br /> Flavorse
           </h2>
           <p className="text-center z-20">

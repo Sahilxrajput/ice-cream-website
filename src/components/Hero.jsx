@@ -1,13 +1,18 @@
 import React from "react";
 import doodleIcon from "../assets/iceCreame/doodleIcon.png";
 import trio from "../assets/iceCreame/trio.png";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
 
 const Hero = () => {
+
+ 
+
   return (
     <div className="h-screen w-screen flex justify-center bg-cover overflow-hidden pt-8 bg-primary">
-    {/* Left Side */}
+      {/* Left Side */}
       <section className="flex-1/2 flex flex-col justify-center items-center gap-8 relative">
-        <h1 className=" font-black text-7xl text-black tracking-wider text-shadow leading-tight">
+        <h1 className=" font-melted text-chocolate text-8xl font-thin tracking-wider text-shadow text-">
           Grab The <br /> Best Ice
           <br /> Creame
         </h1>
@@ -34,9 +39,17 @@ const Hero = () => {
         </button>
       </section>
 
-    {/* Right Side */}
-      <section className="flex-1/2 flex items-center justify-center">
+      {/* Right Side */}
+      <section className="flex-1/2 flex-col flex items-center justify-center">
         <img src={trio} className="h-[90%] pt-2 -rotate-40" />
+        <div className="flex justify-center items-center ml-30 self-baseline gap-6">
+          <button className="p-2 border-1 rounded-full bg-mango">
+            <ArrowLeft />
+          </button>
+          <button className="p-2 border-1 rounded-full bg-mango">
+            <ArrowRight />
+          </button>
+        </div>
       </section>
     </div>
   );

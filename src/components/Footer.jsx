@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="w-screen absolute  bottom-0 bg-mango">
       <div className="w-screen flex items-center justify-center gap-16">
         <img src={logo} className="h-40" />
-        <ul class="list-none flex flex-col items-start px-6 justify-around border-r-2 border-l-2 w-[20%]">
+        <ul class="list-none font-cursive flex flex-col items-start px-6 justify-around border-r-2 border-l-2 w-[20%]">
           <li>Home</li>
           <li>About Us</li>
           <li>Contact</li>

@@ -1,11 +1,11 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dancing+Script:wght@400..700&family=Londrina+Solid:wght@100;300;400;900&family=Rowdies:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dancing+Script:wght@400..700&family=Rowdies:wght@300;400;700&display=swap");
 
 @theme {
-  --color-background:#121212;
+  --color-background: #121212;
   --color-primary: #fecddc;
   --color-secondary: #daeeff;
-  --color-chocolate: #92604c;
+  --color-chocolate: #71341c;
   --color-mango: #f3cb60;
   --color-blueberry: #a470b6;
   --color-strawberry: #f09bb2;
@@ -13,20 +13,15 @@
   --color-vanila: #f6e6bb;
   --font-cursive: "Dancing Script", cursive;
   --font-stylish: "Rowdies", sans-serif;
-  --font-tilt: "Londrina Solid", sans-serif;
   --font-archivo: "Archivo Black", sans-serif;
+  --font-melted: "melted", sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  height: 100%;
-  width: 100%;
+@font-face {
+  font-family: melted;
+  src: url(./assets/fonts/MELTED.ttf) format("truetype");
 }
 
 .text-shadow {
   text-shadow: 6px 2px 4px rgba(0, 0, 0, 0.379);
 }
-
