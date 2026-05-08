@@ -1,31 +1,70 @@
 import React from "react";
-import logo from "../assets/iceCreame/logo2.svg";
+import instagram from "../assets/iceCreame/instagram.svg";
+import twitter from "../assets/iceCreame/twitter.svg";
 
 const Footer = () => {
   return (
-    <div className="w-screen absolute  bottom-0 bg-mango">
-      <div className="w-screen flex items-center justify-center gap-16">
-        <img src={logo} className="h-40" />
-        <ul class="list-none font-cursive flex flex-col items-start px-6 justify-around border-r-2 border-l-2 w-[20%]">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact</li>
-        </ul>
-        <div className="flex gap-6 items-center  justify-center ">
-          <input
-            type="text"
-            placeholder="Enter Your Email"
-            className="border-2 py-2 font-cursive px-4 text-xl outline-none  focus:ring-0 rounded-lg"
-          />
-          <button className="font-cursive text-mango bg-black border-white px-6 py-2 text-xl border-2 rounded-xl">
-            Subscribe
-          </button>
+    <footer className="w-full relative overflow-hidden bg-gradient-to-r from-pink-100 via-yellow-100 to-blue-100 py-12 px-10">
+      {/* Glow Background */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-pink-300 opacity-30 blur-3xl rounded-full"></div>
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-blue-300 opacity-30 blur-3xl rounded-full"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-10">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          {/* Brand */}
+          <div>
+            <h2 className="text-3xl font-bold font-berkshire text-[#71341c]">
+              Sweet Scoops 🍦
+            </h2>
+            <p className="text-gray-700 mt-2 max-w-sm">
+              Crafted with love, cream, and a little bit of magic. Because life
+              is better with ice cream.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div className="flex gap-8 text-gray-700 font-medium">
+            <a href="#" className="hover:text-[#71341c] transition">
+              About
+            </a>
+            <a href="#" className="hover:text-[#71341c] transition">
+              Menu
+            </a>
+            <a href="#" className="hover:text-[#71341c] transition">
+              Flavors
+            </a>
+            <a href="#" className="hover:text-[#71341c] transition">
+              Contact
+            </a>
+          </div>
+
+          {/* Social */}
+          <div className="flex gap-4">
+            <img
+              src={instagram}
+              className="h-10 p-2 rounded-full bg-white shadow-md hover:scale-110 transition cursor-pointer"
+            />
+            <img
+              src={twitter}
+              className="h-10 p-2 rounded-full bg-white shadow-md hover:scale-110 transition cursor-pointer"
+            />
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-40"></div>
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-700">
+          <p>© {new Date().getFullYear()} Sweet Scoops. All rights reserved.</p>
+
+          <p className="italic text-center">
+            Made with milk, sugar & slightly poor life decisions 🍨
+          </p>
         </div>
       </div>
-      <div className="w-full h-10 bg-black text-white flex items-center justify-center tracking-wide">
-      &copy; 2025 &nbsp; <span className="text-mango"> Rainbow</span> &nbsp; Ice<span className="text-strawberry">creame</span> &nbsp; Landing Page Designed by &nbsp; <span className="text-mango">Sahil Rajput</span>
-      </div>
-    </div>
+    </footer>
   );
 };
 

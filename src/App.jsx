@@ -19,22 +19,15 @@ import Hero from "./components/Hero";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-
-
 const App = () => {
-
-     const { scrollYProgress } = useScroll();
-    const width = useTransform(scrollYProgress, [0, 1], ["100%", "40%"]);
-
   return (
     <div className="overflow-x-hidden">
-      <Navbar width={width} />
+      <Navbar width={"50%"} />
       <Hero />
       <img src={rainbow} className="absolute top-10/12 right-2 z-10" />
       {/* second page */}
       <div className="w-screen h-screen bg-secondary px-24 flex relative">
-        <h1 className="font-black text-5xl absolute left-1/2 -translate-x-1/2 top-1/10 text-black tracking-wider text-shadow leading-tight">
+        <h1 className="font-black text-5xl absolute left-1/2 -translate-x-1/2 top-1/10 text-[#2d1307] tracking-wider leading-tight">
           We care About You!
         </h1>
 
@@ -42,16 +35,14 @@ const App = () => {
         <div className="flex flex-col items-center justify-start  text-center gap-20 px-20 w-1/2">
           <img src={wing} className="pt-9 scale-150" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-            distinctio quasi earum minus fugiat quaerat eius, tenetur id
-            quibusdam quisquam, exercitationem ullam deleniti saepe? Obcaecati
-            officia sequi voluptatum neque modi?
+            At our core, we believe ice cream isn&apos;t just dessert, it&apos;s
+            therapy in a cone. Every scoop is crafted with premium ingredients,
+            zero shortcuts, and a whole lot of love.
             <br />
             <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-            distinctio quasi earum minus fugiat quaerat eius, tenetur id
-            quibusdam quisquam, exercitationem ullam deleniti saepe? Obcaecati
-            officia sequi voluptatum neque modi?
+            From farm-fresh milk to handpicked flavors, we make sure every bite
+            feels like a tiny celebration. Because honestly, you deserve better
+            than average ice cream.
           </p>
 
           <div className="flex items-center justify-center gap-6">
@@ -66,30 +57,42 @@ const App = () => {
         {/* Right Side */}
         <div className="flex flex-col mt-40 items-center justify-center text-center gap-4 px-20 w-1/2">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-            distinctio quasi earum minus fugiat quaerat eius, tenetur id
-            quibusdam quisquam, exercitationem ullam deleniti saepe? Obcaecati
-            officia sequi voluptatum neque modi?
+            Whether it&apos;s a bad day, a celebration, or just midnight
+            cravings hitting like a truck, we&apos;ve got the perfect scoop
+            waiting for you.
           </p>
 
-          <div className="flex items-center justify-center gap-6">
-            <button className="px-4 font-cursive border-mango bg-white rounded-full py-1 border-2">
-              Learn more
-            </button>
-          </div>
+          <button className="px-4 font-cursive border-mango bg-white rounded-full py-1 border-2">
+            Learn more
+          </button>
           <img src={milk} className="h-100" />
         </div>
       </div>
 
       {/* Card Page */}
       <div className="w-screen h-screen bg-primary flex justify-start pt-8 gap-8 items-center flex-col">
-        <h2 className=" font-black text-4xl text-black tracking-wider text-shadow leading-tight">
-          Product Range
+        <h2 className=" font-bebas text-6xl text-[#2d1307] tracking-wider leading-tight">
+          Our Delicious Range
         </h2>
         <div className="flex-1 flex gap-5 p-18">
-          <Card title={"Cones"} img={trio2} icon={coneicon} />
-          <Card title={"Juices"} img={juice} icon={juiceicon} />
-          <Card title={"IceCreams"} img={trio3} icon={icecreameicon} />
+          <Card
+            title={"Cones"}
+            img={trio2}
+            icon={coneicon}
+            description="Crispy cones loaded with creamy goodness. Classic, crunchy, and dangerously addictive."
+          />
+          <Card
+            title={"Juices"}
+            img={juice}
+            icon={juiceicon}
+            description="Fresh, fruity, and refreshing blends that cool you down instantly."
+          />
+          <Card
+            title={"IceCreams"}
+            img={trio3}
+            icon={icecreameicon}
+            description="Rich, smooth, and packed with flavors that actually taste like what they're supposed to."
+          />
         </div>
       </div>
 
@@ -125,15 +128,14 @@ const App = () => {
         {/* Right Side  */}
         <div className="flex flex-col items-center justify-center absolute mr-8 w-1/2 right-0 top-2/10 px-20 gap-8">
           <img src={rainbow} className="absolute -top-8 -rotate-45 left-20" />
-          <h2 className=" font-melted font-bold text-5xl z-20 text-[#71341c] tracking-widest text-shadow">
-            Heavenly <br /> Flavorse
+          <h2 className=" font-berkshire font-bold text-5xl z-20 text-[#71341c] tracking-widest text-shadow">
+            Heavenly <br /> Flavors
           </h2>
-          <p className="text-center z-20">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            repellat possimus quia, molestiae impedit voluptatum? Amet placeat
-            aperiam molestias pariatur officiis dignissimos nostrum id, quod
-            sint obcaecati, consequuntur dolorem? Facilis! <br />
-            nostrum id, quod sint obcaecati, consequuntur dolorem? Facilis!
+          <p className="text-start leading-8 text-xl font-light font-poppins z-20">
+            From timeless classics like Vanilla and Chocolate to bold picks like
+            Blueberry and Pistachio, every flavor is crafted to hit differently.
+            <br />
+            One bite, and suddenly your problems feel… slightly less dramatic.
           </p>
           {/* Buttons */}
           <div className="flex justify-between gap-24">
@@ -156,13 +158,16 @@ const App = () => {
           <div className="flex gap-2 items-center justify-between ">
             <input
               type="text"
-              placeholder="Enter Your Email"
+              placeholder="Enter your email for sweet updates"
               className="border-2 py-2 font-cursive px-4 text-xl outline-none  focus:ring-0 rounded-lg"
             />
             <button className="font-cursive bg-mango px-4 py-2 text-xl border-2 rounded-xl">
-              Contact Us
+              Stay Connected
             </button>
           </div>
+          <p>
+            Get exclusive offers, new flavors, and zero spam. We hate spam too.
+          </p>
           <div className="flex items-center justify-start gap-6">
             <img src={twitter} className="h-12" />
             <img src={instagram} className="h-14" />
@@ -170,9 +175,9 @@ const App = () => {
         </div>
         {/* Right */}
         <img src={avatar} className="h-60" />
-
-        <Footer />
       </div>
+
+      <Footer />
     </div>
   );
 };

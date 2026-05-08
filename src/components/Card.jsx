@@ -10,7 +10,9 @@ const Card = ({
   return (
     <div className="bg-secondary relative rounded-2xl h-[85%] w-xs flex flex-col p-6 gap-4 items-center justify-end">
       <img src={img} className="w-60 absolute -top-16" />
-      <h3 className="font-melted tracking-wider text-3xl font-thin">{title}</h3>
+      <h3 className="font-berkshire tracking-wider text-3xl font-thin">
+        {title}
+      </h3>
       <img src={icon} className="w-10" />
       <h4 className="text-center">{description}</h4>
       <button className="bg-primary border-2 rounded-full p-2">
